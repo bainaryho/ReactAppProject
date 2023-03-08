@@ -3,11 +3,12 @@ import Movie from "../components/Movie";
 import styles from "../css/Home.module.css";
 
 function Home() {
+  const rating = (Math.random() * (10 - 7.5) ) + 7.5;
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const getMovies = async () => {
     const response = await fetch(
-      `https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year`
+      `https://yts.mx/api/v2/list_movies.json?minimum_rating=${rating}&sort_by=year`
     );
     const json = await response.json();
     setMovies(json.data.movies);

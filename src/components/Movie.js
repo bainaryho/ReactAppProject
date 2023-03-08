@@ -8,13 +8,12 @@ function Movie({ id, coverImg, url, year, title, summary, genres }) {
       <img src={coverImg} alt={title} className={styles.movie__img} />
       <div>
         <h2 className={styles.movie__title}>
-          <Link to={`/movie/${id}`}>{title}</Link>
-          {/* <a href="/movie">{title}</a> 로 변환이 되지만 새로고침은 일어나지 않는다. */}
+          『<Link to={`/movie/${id}`}>{title}』</Link>
         </h2>
-        <h3 className={styles.movie__year}>{year}</h3>
+        <h3 className={styles.movie__year}>{year}년</h3>
         <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
         <ul className={styles.movie__genres}>
-          {genres.map((g) => (
+          장르: {genres.map((g) => (
             <li key={g}>{g}</li>
           ))}
         </ul>
