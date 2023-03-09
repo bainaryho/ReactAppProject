@@ -1,5 +1,7 @@
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
+import Layout from './Layout/Layout';
+
 import {
   RouterProvider,
   createBrowserRouter,
@@ -18,7 +20,9 @@ const router = createBrowserRouter(
 
 function App() {
 return(
+  <Layout>
     <RouterProvider router={router} />
+  </Layout>
   );
 }
 export default App;

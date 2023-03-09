@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "../css/Detail.module.css";
-import { Link } from "react-router-dom";
 
 function Detail() {
     const [loading, setLoading] = useState(true);
@@ -32,11 +31,11 @@ function Detail() {
                     <span>Loading...</span>
                 </div>
             ) : (
-                <div className={styles.movie}>
-                    <div className={styles.movie__header}>
-                        <h1 className={styles.movie__title}><Link to={`/ReactAppProject`}>{movie.title}</Link></h1>
+                <div >
+                    <div >
+                        <h1 >{movie.title}</h1>
                     </div>
-                    <div className={styles.movie__rate__row}>
+                    <div >
                         <img
                             src={movie.large_cover_image}
                             alt={movie.large_cover_image}
@@ -44,8 +43,8 @@ function Detail() {
                         />
                         <iframe className={styles.traiiler} src={`https://www.youtube.com/embed/${movie.yt_trailer_code}?mute=1&&autoplay=1`}></iframe>
                     </div>
-                        <div className={styles.movie__rate__row}>
-                            <div className={styles.movie__year}>
+                        <div >
+                            <div >
                                 <span>{movie.year}년 • </span>
                                 <span>{movie.runtime}분</span>
                                 <div>
@@ -54,9 +53,9 @@ function Detail() {
                             </div>
                         </div>
                     
-                    <div className={styles.movie__content}>
+                    <div >
                         <div>{movie.description_full}</div>
-                        <div className={styles.movie__genres}>
+                        <div >
                             {genres.map((g) => (
                                 <span key={g}>{g} </span>
                             ))}

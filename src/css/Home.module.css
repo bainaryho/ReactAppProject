@@ -2,7 +2,7 @@
   height: 100%;
   display: flex; /*내용크기에 맞춰 가로방향으로 그러니까 오른쪽으로 덧붙인다. */
   justify-content: center;
-  background-color: aliceblue;
+  background-color: rgb(16, 16, 16);
 }
 .loader {
   width: 100%;
